@@ -1,0 +1,4 @@
+cron:
+- description: Remark a forum here
+  url: /login?bbs=yourBbsId
+  schedule: every 5 minutes

@@ -1,0 +1,23 @@
+application: your appid
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  mime_type: image/x-icon
+  secure: optional
+
+- url: /
+  static_files: admin.htm
+  upload: admin.htm
+  mime_type: text/html
+  login: admin
+  secure: optional
+
+- url: /.*
+  script: ooxx.py
+  login: admin
+  secure: optional
