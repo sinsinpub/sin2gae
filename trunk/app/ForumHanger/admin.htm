@@ -1,0 +1,63 @@
+<!-- 你们这帮233... -->
+<html>
+<head>
+<title>letushang!</title>
+<style type="text/css">
+	body {font-family: Verdana; font-size: 12px}
+	td {font-family: Verdana; font-size: 12px}
+	th {font-family: Verdana; font-size: 12px; background: #233874; color: #FFFFFF}
+</style>
+<script type="text/javascript" language="javascript">
+	function autoFiller(oElement) {
+		var sValue = oElement.value || "";
+		if(!!oElement && oElement.tagName === "SELECT") {
+			if(sValue === "pw") {
+				document.getElementsByName("lo")[0].value = "login.php";
+			} else {
+				document.getElementsByName("lo")[0].value = "logging.php";
+			}
+		} else if(!!oElement && oElement.tagName === "INPUT") {
+			var aInputs = document.getElementsByName(oElement.name);
+			for(var i = 0; i < aInputs.length; i++)
+				aInputs[i].value = sValue;
+		}
+	}
+</script>
+</head>
+<body>
+<p align="center"><strong>PHP Forum Auto Refresher v3</strong></p>
+<table border="0" width="50%" align="center">
+	<tr><th colspan="2">查看论坛数据</th></tr>
+	<tr><td colspan="2" align="center"><input type="button" value="查看" onclick="location.href='/viewlogin'"/></td></tr>
+	<tr><th colspan="2">新增论坛数据</th></tr>
+	<form action="/addlogin" method="get" id="new">
+		<tr><td>论坛ID:</td><td><input name="bbs" size="80" onchange="javascript:autoFiller(this);"/></td></tr>
+		<tr><td>论坛类型:</td><td>
+			<select name="type" onchange="javascript:autoFiller(this);">
+				<option selected value="dz">Discuz!</option><option value="pw">PHPWind</option>
+			</select>
+		</td></tr>
+		<tr><td>基地址:</td><td><input name="url" size="80" value="http://"/></td></tr>
+		<tr><td>logging.php:</td><td><input name="lo" size="80" value="logging.php"/></td></tr>
+		<tr><td>index.php:</td><td><input name="hp" size="80" value="index.php"/></td></tr>
+		<tr><td>register.php:</td><td><input name="reg" size="80" value="register.php"/></td></tr>
+		<tr><td>登录名:</td><td><input name="id"/></td></tr>
+		<tr><td>密码:</td><td><input type="password" name="pwd"/></td></tr>
+		<tr><td colspan="2" align="center"><input type="submit" value="新增"></td></tr>
+	</form>
+	<tr><th colspan="2">测试登录论坛</th></tr>
+	<form action="/testlogin" method="get" id="testlogin">
+		<tr><td>论坛ID:</td><td><input name="bbs" size="80"/></td></tr>
+		<tr><td colspan="2" align="center"><input type="submit" value="登录" ></td></tr>
+	</form>
+	<tr><th colspan="2">删除论坛数据</th></tr>
+	<form action="/deletelogin" method="get" id="del">
+		<tr><td>论坛ID:</td><td><input name="bbs" size="80"/></td></tr>
+		<tr><td colspan="2" align="center"><input type="submit" value="删除" ></td></tr>
+	</form>
+	<tr><th colspan="2">管理控制台</th></tr>
+	<tr><td colspan="2" align="center"><input type="button" value="登录" onclick="location.href='https://appengine.google.com/dashboard?app_id='+location.href.substring(7,location.href.indexOf('.appspot.com'))"/></td></tr>
+</table>
+<p align="center">Sources from Riatre(258921)<br/>Modified by sin_sin, LCK<br/><img src="http://code.google.com/appengine/images/appengine-noborder-120x30.gif" alt="由 Google App Engine 提供支持" /></p>
+</body>
+</html>
