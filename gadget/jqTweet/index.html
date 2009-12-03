@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>jqTweet - A jQuery Twitter Client Sample</title>
+    <meta name="keywords" content="twitter, fanfou, javascript, jquery" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/whisper.css" />
+    <script type="text/javascript" src="lib/jquery.js" charset="utf-8"></script>
+    <script type="text/javascript" src="lib/jquery-ui-custom.js"></script>
+    <script type="text/javascript" src="lib/jquery_replace_html.js"></script>
+    <script type="text/javascript" src="lib/jquery.base64.js"></script>
+    <script type="text/javascript" src="lib/date.js"></script>
+    <script type="text/javascript" src="lib/twitter_lib.js" charset="utf-8"></script>
+</head>
+<body>
+    <div id="signin" style="display: none;">
+        <h1>
+            登录到Twitter搞基吧!</h1>
+        <label for="user">
+            用户名:</label>
+        <input name="user" type="text" />
+        <label for="password">
+            密　码:</label>
+        <input name="password" type="password" />
+        <input type="checkbox" name="remember" onclick="clearUserData();" />
+        记住我
+        <input value="上吧!" type="button" onclick="signin()" />
+    </div>
+    <div id="error" style="display: none;">
+    </div>
+    <div id="workspace" style="display: none;">
+        <div id="compose_tweet_area" style="display: none;">
+            <textarea rows="4" cols="10" onkeyup="textareaChanged();" onblur="textareaChanged();"></textarea>
+            <div class="footer">
+                <input type="button" value=" 我推! " onclick="sendTweet();" />
+                <span class="chars_left"></span>
+            </div>
+        </div>
+        <div id="compose_tweet" onclick="showComposeArea()">
+            <img class="left" src="img/arrow_down.gif" alt="" />
+            正在发生什么!?
+            <img class="right" src="img/arrow_down.gif" alt="" />
+        </div>
+        <div id="paginator">
+            <img src="img/arrow_left.gif" id="nextPage" onclick="Paginator.nextPage();" alt="Next Page" />
+            <img src="img/none.gif" alt="|" />
+            <img src="img/arrow_right.gif" id="previousPage" onclick="Paginator.previousPage();" alt="Previous Page" />
+        </div>
+        <div id="menu">
+            <span id="home"><a href="#">首页</a></span>
+            <span id="metions"><a href="#">回复</a></span>
+            <span id="directmessages"><a href="#">私信</a></span>
+            <span id="favorites"><a href="#">收藏</a></span>
+            <span id="logout"><a href="#" onclick="signout()">退出</a></span>
+        </div>
+        <img src="img/loading.gif" id="loading" style="display: none;" alt="正在更新" />
+        <div style="clear: both;">
+        </div>
+        <div id="update_tweets" onclick="loadNewTweets();">
+        </div>
+        <div id="timeline">
+        </div>
+    </div>
+    <script type="text/javascript" src="tweet.js" charset="utf-8"></script>
+</body>
+</html>
