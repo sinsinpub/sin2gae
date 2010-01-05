@@ -268,8 +268,18 @@ class ViewLogin(webapp.RequestHandler):
 			if b.cookie:
 				text += ','+b.cookie
 			text += ']<br/>'
-			self.response.out.write(text);
+			self.response.out.write(text)
 		self.response.out.write(returnButton)
+
+class ProxyGet(webapp.RequestHandler):
+	def get(self):
+		targetUrl = self.request.get('url')
+		if targetUrl == '':
+			self.response.out.write('I\'m in position')
+		else:
+			targetUrl = 'http://' + targetUrl
+			result = urlfetch.fetch(url=targetUrl,method=urlfetch.GET,allow_truncated=True,follow_redirects=False)
+			self.response.out.write(result.content);
 
 application = webapp.WSGIApplication([('/', MainPage),
                                       ('/login', Relogin),
@@ -277,6 +287,7 @@ application = webapp.WSGIApplication([('/', MainPage),
                                       ('/addlogin', AddLogin),
                                       ('/deletelogin', DeleteLogin),
                                       ('/viewlogin', ViewLogin),
+                                      ('/get', ProxyGet),
                                      ],
                                      debug=True)
 
