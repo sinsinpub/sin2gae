@@ -1,0 +1,33 @@
+application: your id
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  mime_type: image/x-icon
+  secure: optional
+
+- url: /_wave/.*
+  script: wave.py
+  secure: optional
+
+- url: /stylesheets
+  static_dir: stylesheets
+  secure: optional
+
+- url: /responder
+  script: agreeabl.py
+  secure: optional
+  login: admin
+
+- url: /get
+  script: agreeabl.py
+  secure: optional
+  login: admin
+
+- url: /.*
+  script: agreeabl.py
+  secure: optional
