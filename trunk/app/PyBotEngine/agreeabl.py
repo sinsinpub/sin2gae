@@ -179,8 +179,8 @@ class Responder(webapp.RequestHandler):
                     msgList = msg_list
                 else:
                     msgList = []
-                    for repMsg in msgList:
-                        msgList.append(repMsg['msg'])
+                    for repMsg in msgEntries:
+                        msgList.append(repMsg.msg.encode('utf_8'))
 
                 # choose and compile a message
                 selected_msg = random.choice(msgList)
