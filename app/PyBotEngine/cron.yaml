@@ -1,0 +1,16 @@
+cron:
+- description: Do more responses
+  url: /responder
+  schedule: every 2 minutes
+
+- description: Do bot response for reply
+  url: /get?url=sinsinpub.openwebster.com/bot/reply_random.php
+  schedule: every 3 minutes
+
+- description: Do bot daily chats
+  url: /get?url=sinsinpub.openwebster.com/bot/post_random.php
+  schedule: every 29 minutes
+
+#- description: Do bot clock alarm
+#  url: /get?url=sinsinpub.openwebster.com/bot/post_rotation.php
+#  schedule: every 1 hours
