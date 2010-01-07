@@ -5,7 +5,9 @@
 http://twittbot.net/modules/bot/
 
 用户名当然是sin2_bot
+
 密码嘛，还是直接来问我好了=w=
+（因为必须承诺两点：不再二次传播密码，不人工干预BOT行为）
 
 在此之前可以先Chooose language，不能看懂岛语的请选English吧，别说鸟语你也不会。
 （以下按默认的岛语做说明）
