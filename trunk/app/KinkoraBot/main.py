@@ -35,7 +35,7 @@ def ProcessMsg(ti, tw, st, api):
 def main():
   random.seed(time.gmtime())
   stat = getStatus()
-  tapi = doLogin()
+  tapi = dologin.doLogin()
   currenttime = time.gmtime()
   
 #只有在 6:00 ~ 24:00 活动

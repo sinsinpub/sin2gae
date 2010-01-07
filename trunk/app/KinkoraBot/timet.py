@@ -20,7 +20,7 @@ def ProcessTimeTrigger(ti, st, api):
     ]
     api.PostUpdate(random.choice(msg))
   elif ti.tm_hour == 22 and ti.tm_min == 45:
-    if st.KinkoraInBase > 200:
+    if st.KoraInBase > 200:
       msg = [ \
         u'库存还有%d……今天还是不进货了', \
         u'还有%d袋都卖不掉。果断不敢进货了' \
