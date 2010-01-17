@@ -22,7 +22,7 @@ returnButton = "<p><input type='button' onclick='history.go(-1)' value='Back'/><
 class MainPage(webapp.RequestHandler):
 	def get(self):
 		self.response.out.write("<html><style>body {font-family: Verdana; font-size: 12px}</style><body>")
-		self.response.out.write("<p align=center><strong>Discuz Forum Auto Refresher v2</strong></p><p align=center>")
+		self.response.out.write("<p align=center><strong>Discuz Forum Auto Refresher v4</strong></p><p align=center>")
 		self.response.out.write("<a href='/viewlogin'>View forums data</a>")
 		self.response.out.write("</p><p align=center>Sources from Riatre(258921)<br/>Modified by sin_sin, LCK<br/>Powered by Google AppEngine</p>")
 		self.response.out.write("</body></html>")
@@ -119,13 +119,13 @@ class Relogin(webapp.RequestHandler):
 						auth = result.headers['Set-Cookie'][auth_start-5:auth_start+auth_end]
 						cookie = auth+'; '+sid
 					else:
-						sid_start = result.headers['Set-Cookie'].find('cdb_sid=')
+						sid_start = result.headers['Set-Cookie'].find('_sid=')
 						sid_end = result.headers['Set-Cookie'].find(';')
-						sid = result.headers['Set-Cookie'][sid_start+8:sid_end]
-						auth_start = result.headers['Set-Cookie'].find('cdb_auth=')
+						sid = result.headers['Set-Cookie'][sid_start-3:sid_end]
+						auth_start = result.headers['Set-Cookie'].find('_auth=')
 						auth_end = result.headers['Set-Cookie'][auth_start:].find(';')
-						auth = result.headers['Set-Cookie'][auth_start+9:auth_start+auth_end]
-						cookie = 'cdb_sid='+sid+'; '+'cdb_auth='+auth
+						auth = result.headers['Set-Cookie'][auth_start-3:auth_start+auth_end]
+						cookie = sid+'; '+auth
 
 					b.cookie = cookie
 					b.put()
@@ -195,6 +195,9 @@ class Login(webapp.RequestHandler):
 				else:
 					loginUri = login+"?action=login&loginsubmit=yes"
 				result = urlfetch.fetch(url=bbsurl+loginUri,method=urlfetch.POST,payload=form,allow_truncated=True,follow_redirects=False)
+				self.response.out.write("<li>Responsed Set-Cookie:<br/>")
+				self.response.out.write(result.headers['Set-Cookie'])
+				self.response.out.write("<br/><li>Saved Cookie:<br/>")
 
 				if bbstype == 'pw':
 					sid_start = result.headers['Set-Cookie'].find('_ck_info=')
@@ -205,13 +208,13 @@ class Login(webapp.RequestHandler):
 					auth = result.headers['Set-Cookie'][auth_start-5:auth_start+auth_end]
 					cookie = auth+'; '+sid
 				else:
-					sid_start = result.headers['Set-Cookie'].find('cdb_sid=')
+					sid_start = result.headers['Set-Cookie'].find('_sid=')
 					sid_end = result.headers['Set-Cookie'].find(';')
-					sid = result.headers['Set-Cookie'][sid_start+8:sid_end]
-					auth_start = result.headers['Set-Cookie'].find('cdb_auth=')
+					sid = result.headers['Set-Cookie'][sid_start-3:sid_end]
+					auth_start = result.headers['Set-Cookie'].find('_auth=')
 					auth_end = result.headers['Set-Cookie'][auth_start:].find(';')
-					auth = result.headers['Set-Cookie'][auth_start+9:auth_start+auth_end]
-					cookie = 'cdb_sid='+sid+'; '+'cdb_auth='+auth
+					auth = result.headers['Set-Cookie'][auth_start-3:auth_start+auth_end]
+					cookie = sid+'; '+auth
 
 				b.cookie = cookie
 				b.put()
