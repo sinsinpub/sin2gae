@@ -1,6 +1,10 @@
-<!-- ÄãÃÇÕâ°ï233... -->
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Google AppEngine,Python,PHPWind,Discuz,Forum,233" />
+<meta name="description" content="ä½ ä»¬è¿™å¸®233..." />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <title>letushang!</title>
 <style type="text/css">
 	body {font-family: Verdana; font-size: 12px}
@@ -27,37 +31,37 @@
 <body>
 <p align="center"><strong>PHP Forum Auto Refresher v4</strong></p>
 <table border="0" width="50%" align="center">
-	<tr><th colspan="2">²é¿´ÂÛÌ³Êı¾İ</th></tr>
-	<tr><td colspan="2" align="center"><input type="button" value="²é¿´" onclick="location.href='/viewlogin'"/></td></tr>
-	<tr><th colspan="2">ĞÂÔöÂÛÌ³Êı¾İ</th></tr>
+	<tr><th colspan="2">æŸ¥çœ‹è®ºå›æ•°æ®</th></tr>
+	<tr><td colspan="2" align="center"><input type="button" value="æŸ¥çœ‹" onclick="location.href='/viewlogin'"/></td></tr>
+	<tr><th colspan="2">æ–°å¢è®ºå›æ•°æ®</th></tr>
 	<form action="/addlogin" method="get" id="new">
-		<tr><td>ÂÛÌ³ID:</td><td><input name="bbs" size="80" onchange="javascript:autoFiller(this);"/></td></tr>
-		<tr><td>ÂÛÌ³ÀàĞÍ:</td><td>
+		<tr><td>è®ºå›ID:</td><td><input name="bbs" size="80" onchange="javascript:autoFiller(this);"/></td></tr>
+		<tr><td>è®ºå›ç±»å‹:</td><td>
 			<select name="type" onchange="javascript:autoFiller(this);">
 				<option selected value="dz">Discuz!</option><option value="pw">PHPWind</option>
 			</select>
 		</td></tr>
-		<tr><td>»ùµØÖ·:</td><td><input name="url" size="80" value="http://"/></td></tr>
+		<tr><td>åŸºåœ°å€:</td><td><input name="url" size="80" value="http://"/></td></tr>
 		<tr><td>logging.php:</td><td><input name="lo" size="80" value="logging.php"/></td></tr>
 		<tr><td>index.php:</td><td><input name="hp" size="80" value="index.php"/></td></tr>
 		<tr><td>register.php:</td><td><input name="reg" size="80" value="register.php"/></td></tr>
-		<tr><td>µÇÂ¼Ãû:</td><td><input name="id"/></td></tr>
-		<tr><td>ÃÜÂë:</td><td><input type="password" name="pwd"/></td></tr>
-		<tr><td colspan="2" align="center"><input type="submit" value="ĞÂÔö"></td></tr>
+		<tr><td>ç™»å½•å:</td><td><input name="id"/></td></tr>
+		<tr><td>å¯†ç :</td><td><input type="password" name="pwd"/></td></tr>
+		<tr><td colspan="2" align="center"><input type="submit" value="æ–°å¢"></td></tr>
 	</form>
-	<tr><th colspan="2">²âÊÔµÇÂ¼ÂÛÌ³</th></tr>
+	<tr><th colspan="2">æµ‹è¯•ç™»å½•è®ºå›</th></tr>
 	<form action="/testlogin" method="get" id="testlogin">
-		<tr><td>ÂÛÌ³ID:</td><td><input name="bbs" size="80"/></td></tr>
-		<tr><td colspan="2" align="center"><input type="submit" value="µÇÂ¼" ></td></tr>
+		<tr><td>è®ºå›ID:</td><td><input name="bbs" size="80"/></td></tr>
+		<tr><td colspan="2" align="center"><input type="submit" value="ç™»å½•" ></td></tr>
 	</form>
-	<tr><th colspan="2">É¾³ıÂÛÌ³Êı¾İ</th></tr>
+	<tr><th colspan="2">åˆ é™¤è®ºå›æ•°æ®</th></tr>
 	<form action="/deletelogin" method="get" id="del">
-		<tr><td>ÂÛÌ³ID:</td><td><input name="bbs" size="80"/></td></tr>
-		<tr><td colspan="2" align="center"><input type="submit" value="É¾³ı" ></td></tr>
+		<tr><td>è®ºå›ID:</td><td><input name="bbs" size="80"/></td></tr>
+		<tr><td colspan="2" align="center"><input type="submit" value="åˆ é™¤" ></td></tr>
 	</form>
-	<tr><th colspan="2">¹ÜÀí¿ØÖÆÌ¨</th></tr>
-	<tr><td colspan="2" align="center"><input type="button" value="µÇÂ¼" onclick="location.href='https://appengine.google.com/dashboard?app_id='+location.href.substring(7,location.href.indexOf('.appspot.com'))"/></td></tr>
+	<tr><th colspan="2">ç®¡ç†æ§åˆ¶å°</th></tr>
+	<tr><td colspan="2" align="center"><input type="button" value="ç™»å½•" onclick="location.href='https://appengine.google.com/dashboard?app_id='+location.href.substring(7,location.href.indexOf('.appspot.com'))"/></td></tr>
 </table>
-<p align="center">Sources from Riatre(258921)<br/>Modified by sin_sin, LCK<br/><img src="http://code.google.com/appengine/images/appengine-noborder-120x30.gif" alt="ÓÉ Google App Engine Ìá¹©Ö§³Ö" /></p>
+<p align="center">Sources from Riatre(258921)<br/>Modified by sin_sin, LCK<br/><img src="http://code.google.com/appengine/images/appengine-noborder-120x30.gif" alt="ç”± Google App Engine æä¾›æ”¯æŒ" /></p>
 </body>
 </html>
