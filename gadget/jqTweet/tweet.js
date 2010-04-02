@@ -342,8 +342,10 @@ function assemblyTweets(tweets) {
 
   for(var unreadId in tweetManager.unreadTweets) {
     $("#tweet_" + unreadId).addClass('unread');
+    $("#tweet_" + unreadId).css('background-color', '#eed077');
   }
-  $(".tweet.unread").hoverFor(2000,
+
+  $(".tweet.unread").hoverFor(700,
     function() {
       //Hovering for <time> seconds, let's read it.
       tweetManager.readTweet(this.id.split('_')[1]);
@@ -353,7 +355,7 @@ function assemblyTweets(tweets) {
       //Starting countdown to read
       $(this).animate({
         backgroundColor: '#ee7'
-      }, 2000);
+      }, 700);
     },
     function() {
       //Countdown aborted
