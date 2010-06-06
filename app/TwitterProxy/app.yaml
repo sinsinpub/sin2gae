@@ -1,0 +1,49 @@
+application: your appid
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /api/.*
+  script: code.py
+  secure: optional
+- url: /base/.*
+  script: code.py
+  secure: optional
+- url: /search/.*
+  script: code.py
+  secure: optional
+- url: /optimized/.*
+  script: code.py
+  secure: optional
+- url: /text/.*
+  script: code.py
+  secure: optional
+- url: /image/.*
+  script: code.py
+  secure: optional
+
+- url: /
+  static_files: index.html
+  upload: index.html
+  secure: optional
+
+- url: /test/favicon\.ico
+  static_files: test/img/favicon.ico
+  upload: test/img/favicon.ico
+  mime_type: image/x-icon
+  secure: optional
+
+- url: /test
+  static_dir: test
+  secure: optional
+
+- url: /gtap/.*
+  script: gtap.py
+  secure: optional
+- url: /gtap_oauth/.*
+  script: gtap_oauth.py
+  secure: optional
+- url: /oauth/.*
+  script: oauth.py
+  secure: optional
