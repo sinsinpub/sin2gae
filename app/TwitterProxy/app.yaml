@@ -37,6 +37,9 @@ handlers:
 - url: /test
   static_dir: test
   secure: optional
+- url: /static
+  static_dir: static
+  secure: optional
 
 - url: /gtap/.*
   script: gtap.py
@@ -46,4 +49,7 @@ handlers:
   secure: optional
 - url: /oauth/.*
   script: oauth.py
+  secure: optional
+- url: /gto/.*
+  script: gtap_oauth_dev.py
   secure: optional

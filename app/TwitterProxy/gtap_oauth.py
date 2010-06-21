@@ -95,6 +95,14 @@ class MainPage(webapp.RequestHandler):
                         continue
                     if k.lower() in skipped_headers:
                         continue
+                    k = k \
+                    .replace('x-transaction', 'X-Transaction') \
+                    .replace('x-ratelimit-limit', 'X-RateLimit-Limit') \
+                    .replace('x-ratelimit-remaining', 'X-RateLimit-Remaining') \
+                    .replace('x-runtime', 'X-Runtime') \
+                    .replace('x-ratelimit-class', 'X-RateLimit-Class') \
+                    .replace('x-revision', 'X-Revision') \
+                    .replace('x-ratelimit-reset', 'X-RateLimit-Reset')
                     del self.response.headers[k]
                     self.response.headers[k] = data.headers[k];
 
