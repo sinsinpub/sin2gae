@@ -74,7 +74,7 @@ class Relogin(webapp.RequestHandler):
 
 				reqHeader = {
 					"Cookie": cookie,
-					"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Chrome/4.0.221.6 Safari/532.2"
+					#"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Chrome/4.0.221.6 Safari/532.2"
 				}
 
 				trying = True
