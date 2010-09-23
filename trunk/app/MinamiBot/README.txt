@@ -16,6 +16,11 @@ minamibot	定时发送随机的带weblio.jp链接的单词推
 suzuranbot	定时发送随机的纯单词推
 webliko	经weblio.jp查询日语单词（cron每2分钟执行）
 
+文件说明：
+MinamiBotChecker.php	一个页面完成查看minami系bot工作状态（bot是否在发推、是否被冻结账户等）的好办法……
+themter.php	查看指定用户的主题、图片和配色方案（谜之声：主人用来盗取主题的……）
+main.css	感谢@rainux同学提供的主题文件（上述两者共用）
+
 Twitter账户：
 @shimada_minami	日语N1+单词
 @himejimizuki	TOFEL单词
