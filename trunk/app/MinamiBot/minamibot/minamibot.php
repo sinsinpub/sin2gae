@@ -41,7 +41,7 @@ function get_unu_url($url)
 $to = new TwitterOAuth($consumer_key,$consumer_secret,$access_token,$access_token_secret);
 $twilist = array(
 // 总之活用各种编辑器、Office或者想办法填满这里吧，最后一个数组元素不写逗号也可以唷
-// 这里[单词]的位置之后要留有一个半角空格，用于传递令牌以便在weblio.jp获取单词的链接。
+// 这里[单词]的位置之后必须要留有一个半角空格，用于传递单词令牌以便在weblio.jp获取单词的链接。
 // 如果没有空格，链接地址会错
 "单词 随机推内容1",
 "单词 随机推内容2",
