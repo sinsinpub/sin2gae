@@ -1,0 +1,4 @@
+cron:
+- description: Post to Twitter
+  url: /
+  schedule: every 15 minutes
