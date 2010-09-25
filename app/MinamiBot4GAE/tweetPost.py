@@ -17,7 +17,10 @@ class TweetPost(webapp.RequestHandler):
 		f = file('data.txt')
 		list_of_all_the_lines = list(f) # 读取文件的所有内容到一个列表
 		postText = random.choice(list_of_all_the_lines)
-		f.close()
+		try:
+			all_the_text = f.read()
+		finally:
+			f.close()
 		client = oauth.TwitterClient(TWITTER_CONSUMER_KEY,
 							TWITTER_CONSUMER_SECRET, None)
 		param = {'status': postText}
