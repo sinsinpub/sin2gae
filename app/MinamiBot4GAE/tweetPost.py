@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+# 
 import os
 import oauth
 import random
@@ -14,8 +14,11 @@ TWITTER_ACCESS_TOKEN_SECRET =  ''
 # 将文本文件中的一行随机发布到推特
 class TweetPost(webapp.RequestHandler):
 	def get(self):
-		f = file('data.txt')
-		list_of_all_the_lines = list(f) # 读取文件的所有内容到一个列表
+		#~ f = file('data.txt')
+		#~ list_of_all_the_lines = list(f) # 读取所有行到一个列表，保留每行的换行符
+		#~ postText = random.choice(list_of_all_the_lines)
+		f = open("data.txt", "r")
+		list_of_all_the_lines = [l.strip() for l in f.readlines()] #读取所有行到列表，清除换行符
 		postText = random.choice(list_of_all_the_lines)
 		try:
 			all_the_text = f.read()
