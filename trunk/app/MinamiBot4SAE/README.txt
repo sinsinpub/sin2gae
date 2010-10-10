@@ -7,6 +7,7 @@ MinamiBot在Sina App Engine的版本
 这个文件的编码必须为utf-8
 文件最后需要EOF
 
+如何使用：
 
 1.将index.php第7行的user login name，user password改为你的
 
