@@ -29,12 +29,12 @@ $access_token_secret = "";
 }}}
 
 ==目录说明==
-* minamibot
-定时发送随机的带weblio.jp链接的单词推
-* suzuranbot
-定时发送随机的纯单词推
-* webliko
-经weblio.jp查询日语单词，cron任务请设为每2分钟执行
+ * minamibot
+ 定时发送随机的带weblio.jp链接的单词推
+ * suzuranbot
+ 定时发送随机的纯单词推
+ * webliko
+ 经weblio.jp查询日语单词，cron任务请设为每2分钟执行
 
 =MinamiBot4SAE=
 
