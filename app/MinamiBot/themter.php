@@ -36,7 +36,7 @@ $startTime = $mtime1[0] + $mtime1[1];
 
 <form id="themter" name="username" method="post" action="<?php echo $_SERVER['PHP_SELF'].'?p=1';?>">
 Twitter ID: <input type="text" name="username" id="username" size="20" maxlength="20" />
-<input type="submit" value="查看" />  <span>*例如输入 shimada_minami<span/>
+<input type="submit" value="查看" />  <span>*例如输入 nodoka_bot<span/>
 </form>
 <?php
 function fontbgcolor($hexColor) {
@@ -45,7 +45,7 @@ function fontbgcolor($hexColor) {
 }
 function checkusername ($name,$min=1,$max=15) {
   if(strlen($name)<$min or strlen($name)>$max)return false;
-  $preg="/^[\w\d_]+$/";  //定义字符范围。
+  $preg="/^[a-z A-Z 0-9 _]+$/";  //定义字符范围。必须如此，/^[\w\d_]+$/会允许输入汉字。
   if(!preg_match($preg,$name))return false;
  return true;
 }
