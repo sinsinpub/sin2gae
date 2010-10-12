@@ -21,13 +21,12 @@
 
 ==如何使用==
 执行cron定时任务之前，需要修改相应目录下[bot名].php中的
-$user（只限于webliko）
-$consumer_key
-$consumer_secret
-$access_token
-$access_token_secret
-的相应的值为bot账户的值。可以在 http://dev.twitter.com/apps 建立和获取。
-注意，申请的app请设置为客户端应用。
+{{{
+$consumer_key = "";
+$consumer_secret = "";
+$access_token = "";
+$access_token_secret = "";
+}}}
 
 ==目录说明==
 * minamibot
@@ -57,7 +56,7 @@ data.txt的文本编码必须为utf-8。
 =MinamiBot4GAE=
 
 ==如何使用==
-# 修改tweetPost.py中的
+ # 修改tweetPost.py中的
 {{{
 TWITTER_CONSUMER_KEY = ''
 TWITTER_CONSUMER_SECRET = ''
@@ -65,11 +64,11 @@ TWITTER_ACCESS_TOKEN = ''
 TWITTER_ACCESS_TOKEN_SECRET =  ''
 }}}
 
-# 在data.txt内每行写一句，会随机发布到Twitter上。
+ # 在data.txt内每行写一句，会随机发布到Twitter上。
 
-# 在cron.yaml设置定时任务。
+ # 在cron.yaml设置定时任务。
 
-# 上传到Google App Engine
+ # 上传到Google App Engine
 
 ==注意事项==
 
