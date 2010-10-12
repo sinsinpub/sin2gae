@@ -20,8 +20,8 @@
 = MinamiBot =
 
 ==如何使用==
-执行cron定时任务之前，需要修改相应目录下[bot名].php中的
-{{{
+ 执行cron定时任务之前，需要修改相应目录下[bot名].php中的
+ {{{
 $consumer_key = "";
 $consumer_secret = "";
 $access_token = "";
@@ -44,30 +44,30 @@ data.txt的文本编码必须为utf-8。
 
 ==如何使用==
 
- # 将index.php中的
-{{{$w->setUser( 'user login name' , 'user password' );}}}
-改为你的用户名和密码。
+ * 将index.php中的
+  {{{$w->setUser( 'user login name' , 'user password' );}}}
+   改为你的用户名和密码。
 
- # 在data.txt内每行写一句，会随机发布到Twitter上。
+ * 在data.txt内每行写一句，会随机发布到Twitter上。
 
- # 在config.yaml设置定时任务。
+ * 在config.yaml设置定时任务。
 
 =MinamiBot4GAE=
 
 ==如何使用==
- # 修改tweetPost.py中的
-{{{
+ * 修改tweetPost.py中的
+ {{{
 TWITTER_CONSUMER_KEY = ''
 TWITTER_CONSUMER_SECRET = ''
 TWITTER_ACCESS_TOKEN = ''
 TWITTER_ACCESS_TOKEN_SECRET =  ''
 }}}
 
- # 在data.txt内每行写一句，会随机发布到Twitter上。
+ * 在data.txt内每行写一句，会随机发布到Twitter上。
 
- # 在cron.yaml设置定时任务。
+ * 在cron.yaml设置定时任务。
 
- # 上传到Google App Engine
+ * 上传到Google App Engine
 
 ==注意事项==
 
