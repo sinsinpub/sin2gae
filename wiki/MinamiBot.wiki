@@ -50,8 +50,7 @@ data.txt的文本编码必须为utf-8。
 
  # 在data.txt内每行写一句，会随机发布到Twitter上。
 
- # 在config.yaml设置定时任务，例如：
-`schedule: every 15 mins`
+ # 在config.yaml设置定时任务。
 
 =MinamiBot4GAE=
 
