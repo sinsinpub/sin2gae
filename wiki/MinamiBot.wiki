@@ -3,7 +3,14 @@
 
 = 简介 =
 
-由PHP修改的用于学习的推特BOT。使用Oauth方式发推。灵感来源于雷鸣的金克拉BOT。修改PHP的初衷是用于学习外语和与同好交流。
+用于学习的推特BOT。使用Oauth方式发推。
+*包括几个版本
+ #PHP版
+  #MinamiBot
+ #Goole App Engine版
+  #MinamiBot4GAE
+ #Sina App Engine版
+  #MinamiBot4SAE
 
 = 如何使用 =
 
