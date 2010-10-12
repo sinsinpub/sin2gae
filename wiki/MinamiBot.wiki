@@ -5,7 +5,6 @@
 
 由PHP修改的用于学习的推特BOT。使用Oauth方式发推。灵感来源于雷鸣的金克拉BOT。修改PHP的初衷是用于学习外语和与同好交流。
 
-
 = 如何使用 =
 
 MinamiBot(php版)
@@ -29,3 +28,32 @@ webliko/	经weblio.jp查询日语单词，cron任务请设为每2分钟执行
 MinamiBotChecker.php	查看minami系BOT工作状态的页面
 themter.php	查看指定用户的主题、图片和配色方案
 main.css	感谢@rainux同学提供的主题文件（共用）
+
+注意事项：
+
+在data.txt内每行写一句要发布到Twitter的内容，会随机发布其中一行内容
+这个文件的编码必须为utf-8
+文件最后需要EOF
+
+app.yaml中加入的login: admin为验证浏览者是否为拥有者，如果不需要安全性可以去掉这行
+cron.yaml中的schedule: every 15 minutes为指定发推时间，可更改为
+every 1 day 每天
+every 30 mins 每30分钟
+every 3 hours 每3小时
+等
+
+
+MinamiBot在Sina App Engine的版本
+
+注意事项：
+
+在data.txt内每行写一句要发布到Twitter的内容，会随机发布其中一行内容
+这个文件的编码必须为utf-8
+文件最后需要EOF
+
+如何使用：
+
+1.将index.php第7行的user login name，user password改为你的
+
+2.设置SAE config.yaml的cron任务（可自定义）：
+      schedule: every 15 mins
