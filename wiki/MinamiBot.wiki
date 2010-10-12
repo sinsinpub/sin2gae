@@ -17,7 +17,7 @@
  * MinamiBotChecker
  查看minami系机器人工作状态的PHP脚本。一般来说只有我用得上。
 
-= MinamiBot的使用 =
+= MinamiBot =
 
 ==如何使用==
 执行cron定时任务之前，需要修改相应目录下[bot名].php中的
@@ -37,21 +37,11 @@ $access_token_secret
 * webliko
 经weblio.jp查询日语单词，cron任务请设为每2分钟执行
 
-==注意事项==
-
-在data.txt内每行写一句要发布到Twitter的内容，会随机发布其中一行内容。
-data.txt的编码必须为utf-8。
-
-app.yaml中加入的`login: admin`为验证浏览者是否为拥有者，如果不需要安全性可以去掉这行。
-
-cron.yaml中的{{{schedule: every 15 minutes}}}为指定发推时间，可自定义。
-
-=MinamiBot4SAE的使用=
+=MinamiBot4SAE=
 
 ==注意事项==
 
-在data.txt内每行写一句要发布到Twitter的内容，会随机发布其中一行内容。
-data.txt的编码必须为utf-8。
+data.txt的文本编码必须为utf-8。
 
 ==如何使用==
 
@@ -59,14 +49,12 @@ data.txt的编码必须为utf-8。
 {{{$w->setUser( 'user login name' , 'user password' );}}}
 改为你的用户名和密码。
 
+# 在data.txt内每行写一句，会随机发布到Twitter上。
+
 # 在config.yaml设置定时任务，例如：
 `schedule: every 15 mins`
 
-=MinamiBot4GAE的使用=
-
-==注意事项==
-
-data.txt的编码必须为utf-8。
+=MinamiBot4GAE=
 
 ==如何使用==
 # 修改tweetPost.py中的
@@ -75,10 +63,15 @@ TWITTER_CONSUMER_KEY = ''
 TWITTER_CONSUMER_SECRET = ''
 TWITTER_ACCESS_TOKEN = ''
 TWITTER_ACCESS_TOKEN_SECRET =  ''
-}}
+}}}
 
 # 在data.txt内每行写一句，会随机发布到Twitter上。
 
 # 在cron.yaml设置定时任务。
 
 # 上传到Google App Engine
+
+==注意事项==
+
+data.txt的编码必须为utf-8。
+app.yaml中加入的`login: admin`为只限定项目管理员可浏览，如果不需要可以去掉该行。
