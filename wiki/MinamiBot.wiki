@@ -3,17 +3,19 @@
 
 = 简介 =
 
-发送单词推特BOT。使用Oauth方式发推。
+发送单词的、用于学习单词的推特机器人。使用Oauth方式发推。
 
 ==各语言版本简介==
  * MinamiBot
-  需要单独设定cron任务的PHP版本。
+ PHP版本的单词娘，需要单独设定cron任务。
  * MinamiBot4GAE
-  用于Google App Engine的版本。
+ Google App Engine的版本的单词娘。
  * MinamiBot4SAE
-  用于Sina App Engine的版本。需要有SAE的注册资格。
+ Sina App Engine版本的单词娘。
  * Themter
-  PHP写的可查看指定Twitter用户的主题、图片和配色方案。
+ 指定Twitter用户的主题、图片和配色方案的PHP脚本。俗称Twitter主题盗取器。
+ * MinamiBotChecker
+ 查看minami系机器人工作状态的PHP脚本。一般来说只有我用得上。
 
 = MinamiBot的使用 =
 
@@ -32,9 +34,6 @@ $access_token_secret
 *suzuranbot*	定时发送随机的纯单词推
 *webliko*	经weblio.jp查询日语单词，cron任务请设为每2分钟执行
 
-==文件说明==
-MinamiBotChecker.php	PHP写的可查看minami系BOT的工作状态的脚本。（作者私用）
-
 ==注意事项==
 
 在data.txt内每行写一句要发布到Twitter的内容，会随机发布其中一行内容。
@@ -42,7 +41,7 @@ data.txt的编码必须为utf-8。
 
 app.yaml中加入的`login: admin`为验证浏览者是否为拥有者，如果不需要安全性可以去掉这行。
 
-cron.yaml中的schedule: every 15 minutes为指定发推时间，可自定义。
+cron.yaml中的{{{schedule: every 15 minutes}}}为指定发推时间，可自定义。
 
 =MinamiBot4SAE的使用=
 
@@ -54,7 +53,7 @@ data.txt的编码必须为utf-8。
 ==如何使用==
 
  # 将index.php中的
-`$w->setUser( 'user login name' , 'user password' );`
+{{{$w->setUser( 'user login name' , 'user password' );}}}
 改为你的用户名和密码。
 
  # 设置你的项目文件的config.yaml的cron任务，例如：
