@@ -30,9 +30,12 @@ $access_token_secret
 注意，申请的app请设置为客户端应用。
 
 ==目录说明==
-*minamibot*	定时发送随机的带weblio.jp链接的单词推
-*suzuranbot*	定时发送随机的纯单词推
-*webliko*	经weblio.jp查询日语单词，cron任务请设为每2分钟执行
+* minamibot
+定时发送随机的带weblio.jp链接的单词推
+* suzuranbot
+定时发送随机的纯单词推
+* webliko
+经weblio.jp查询日语单词，cron任务请设为每2分钟执行
 
 ==注意事项==
 
@@ -52,12 +55,30 @@ data.txt的编码必须为utf-8。
 
 ==如何使用==
 
- # 将index.php中的
+# 将index.php中的
 {{{$w->setUser( 'user login name' , 'user password' );}}}
 改为你的用户名和密码。
 
- # 设置你的项目文件的config.yaml的cron任务，例如：
+# 在config.yaml设置定时任务，例如：
 `schedule: every 15 mins`
 
 =MinamiBot4GAE的使用=
-类似SAE版。请参考SAE版的使用说明。
+
+==注意事项==
+
+data.txt的编码必须为utf-8。
+
+==如何使用==
+# 修改tweetPost.py中的
+{{{
+TWITTER_CONSUMER_KEY = ''
+TWITTER_CONSUMER_SECRET = ''
+TWITTER_ACCESS_TOKEN = ''
+TWITTER_ACCESS_TOKEN_SECRET =  ''
+}}
+
+# 在data.txt内每行写一句，会随机发布到Twitter上。
+
+# 在cron.yaml设置定时任务。
+
+# 上传到Google App Engine
