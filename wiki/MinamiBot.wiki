@@ -6,16 +6,16 @@
 发送单词推特BOT。使用Oauth方式发推。
 
 ==各语言版本简介==
- *MinamiBot
+ * MinamiBot
   需要单独设定cron任务的PHP版本。
- *MinamiBot4GAE
+ * MinamiBot4GAE
   用于Google App Engine的版本。
- *MinamiBot4SAE
+ * MinamiBot4SAE
   用于Sina App Engine的版本。需要有SAE的注册资格。
- *Themter
+ * Themter
   PHP写的可查看指定Twitter用户的主题、图片和配色方案。
 
-= PHP版的使用 =
+= MinamiBot的使用 =
 
 ==如何使用==
 执行cron定时任务之前，需要修改相应目录下[bot名].php中的
@@ -44,7 +44,7 @@ app.yaml中加入的`login: admin`为验证浏览者是否为拥有者，如果�
 
 cron.yaml中的schedule: every 15 minutes为指定发推时间，可自定义。
 
-=MinamiBot在Sina App Engine的版本=
+=MinamiBot4SAE的使用=
 
 ==注意事项==
 
@@ -59,3 +59,6 @@ data.txt的编码必须为utf-8。
 
  # 设置你的项目文件的config.yaml的cron任务，例如：
 `schedule: every 15 mins`
+
+=MinamiBot4GAE的使用=
+类似SAE版。请参考SAE版的使用说明。
