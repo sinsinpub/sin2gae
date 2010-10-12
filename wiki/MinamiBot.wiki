@@ -6,15 +6,14 @@
 发送单词推特BOT。使用Oauth方式发推。
 
 ==各语言版本简介==
- ===MinamiBot===
+*MinamiBot*
   需要单独设定cron任务的PHP版本。
- ===MinamiBot4GAE===
+*MinamiBot4GAE*
   用于Google App Engine的版本。
- ===MinamiBot4SAE===
+*MinamiBot4SAE*
   用于Sina App Engine的版本。需要有SAE的注册资格。
- ===Themter===
+*Themter*
   PHP写的可查看指定Twitter用户的主题、图片和配色方案。
-  
 
 = PHP版的使用 =
 
@@ -34,19 +33,16 @@ $access_token_secret
 *webliko*	经weblio.jp查询日语单词，cron任务请设为每2分钟执行
 
 ==文件说明==
-MinamiBotChecker.php	PHP写的查看minami系BOT的工作状态。（作者私用）
+MinamiBotChecker.php	PHP写的可查看minami系BOT的工作状态的脚本。（作者私用）
 
 ==注意事项==
 
 在data.txt内每行写一句要发布到Twitter的内容，会随机发布其中一行内容。
 data.txt的编码必须为utf-8。
 
-app.yaml中加入的login: admin为验证浏览者是否为拥有者，如果不需要安全性可以去掉这行。
+app.yaml中加入的`login: admin`为验证浏览者是否为拥有者，如果不需要安全性可以去掉这行。
 
-cron.yaml中的schedule: every 15 minutes为指定发推时间，可更改为。
-every 1 day 每天
-every 30 mins 每30分钟
-every 3 hours 每3小时
+cron.yaml中的schedule: every 15 minutes为指定发推时间，可自定义。
 
 =MinamiBot在Sina App Engine的版本=
 
@@ -57,9 +53,9 @@ data.txt的编码必须为utf-8。
 
 ==如何使用==
 
-#将index.php中的
+ #将index.php中的
 `$w->setUser( 'user login name' , 'user password' );`
 改为你的用户名和密码。
 
-#设置你的项目文件的config.yaml的cron任务，例如：
+ #设置你的项目文件的config.yaml的cron任务，例如：
 `schedule: every 15 mins`
