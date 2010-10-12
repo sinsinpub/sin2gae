@@ -6,13 +6,13 @@
 发送单词推特BOT。使用Oauth方式发推。
 
 ==各语言版本简介==
- *MinamiBot*
+ MinamiBot
   需要单独设定cron任务的PHP版。
- *MinamiBot4GAE*
+ MinamiBot4GAE
   用于Google App Engine的版本。
- *MinamiBot4SAE*
+ MinamiBot4SAE
   用于Sina App Engine的版本。需要有SAE的注册资格。
- *Themter*
+ Themter
   PHP写的可查看指定Twitter用户的主题、图片和配色方案。
   
 
