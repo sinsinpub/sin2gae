@@ -1,75 +1,13 @@
-#labels Twitter,BOT,php,python,gae,sae
-#MinamiBot各语言版本的使用方法
+#labels Twitter,robot,php,python,GAE,SAE
+#由minamimaster提供的单词机器人
 
-= 简介 =
+==各目录简介==
 
-发送单词的、用于学习单词的推特机器人。使用Oauth方式发推。
-
-==各语言版本简介==
  * MinamiBot
- PHP版本的单词娘，需要单独设定cron任务。
+  适用于使用php发布到Twitter
  * MinamiBot4GAE
- Google App Engine的版本的单词娘。
+  适用于使用Google App Engine发布到Twitter
  * MinamiBot4SAE
- Sina App Engine版本的单词娘。
- * Themter
- 指定Twitter用户的主题、图片和配色方案的PHP脚本。俗称Twitter主题盗取器。
- * MinamiBotChecker
- 查看minami系机器人工作状态的PHP脚本。一般来说只有我用得上。
-
-= MinamiBot =
-
-==如何使用==
- 执行cron定时任务之前，需要修改相应目录下[bot名].php中的
- {{{
-$consumer_key = "";
-$consumer_secret = "";
-$access_token = "";
-$access_token_secret = "";
-}}}
-
-==目录说明==
- * minamibot
- 定时发送随机的带weblio.jp链接的单词推
- * suzuranbot
- 定时发送随机的纯单词推
- * webliko
- 经weblio.jp查询日语单词，cron任务请设为每2分钟执行
-
-=MinamiBot4SAE=
-
-==注意事项==
-
-data.txt的文本编码必须为utf-8。
-
-==如何使用==
-
- * 将index.php中的
-  {{{$w->setUser( 'user login name' , 'user password' );}}}
-   改为你的用户名和密码。
-
- * 在data.txt内每行写一句，会随机发布到Twitter上。
-
- * 在config.yaml设置定时任务。
-
-=MinamiBot4GAE=
-
-==如何使用==
- * 修改tweetPost.py中的
- {{{
-TWITTER_CONSUMER_KEY = ''
-TWITTER_CONSUMER_SECRET = ''
-TWITTER_ACCESS_TOKEN = ''
-TWITTER_ACCESS_TOKEN_SECRET =  ''
-}}}
-
- * 在data.txt内每行写一句，会随机发布到Twitter上。
-
- * 在cron.yaml设置定时任务。
-
- * 上传到Google App Engine
-
-==注意事项==
-
-data.txt的编码必须为utf-8。
-app.yaml中加入的`login: admin`为只限定项目管理员可浏览，如果不需要可以去掉该行。
+  适用于使用Sina App Engine发布到新浪微博
+ * FanfouBot4SAE
+  适用于使用Sina App Engine发布到饭否
