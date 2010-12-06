@@ -7,8 +7,6 @@ $Users =array(
 'username' => 'password', 
 ); 
 
-// 对多个机器人账户
-foreach ($Users as $username=>$password){
 // post函数
 function do_post_request($url)
 {
@@ -31,7 +29,7 @@ function convert_query($userstofollow)
     }
     return $userstofollow2;
 }
-// 随机获取一个ID的某一个foer或foing
+// 随机获取一个ID的某一个foer
 function one_to_follow($username, $password, $target)
 {
     $userstoprefollow = simplexml_load_file("http://$username:$password@api2.fanfou.com/followers/ids/$target.xml");
@@ -41,6 +39,29 @@ function one_to_follow($username, $password, $target)
     $usertoprefollow = $userstoprefollow2[$rand_key];
     return $usertoprefollow;
 }
+
+// 随机获取一个ID的某一个foer或foing
+function one_to_follow2($username, $password, $target)
+{
+    $rand_num = rand(1, 2);
+    if ($rand_num == 1)
+    {
+        $foing_or_foer = 'followers';
+    }
+    else
+    {
+        $foing_or_foer = 'friends';
+    }
+    $userstoprefollow = simplexml_load_file("http://$username:$password@api2.fanfou.com/$foing_or_foer/ids/$target.xml");
+    $userstoprefollow = (array)$userstoprefollow;
+    $userstoprefollow2 = convert_query($userstoprefollow);
+    $rand_key = array_rand($userstoprefollow2);
+    $usertoprefollow = $userstoprefollow2[$rand_key];
+    return $usertoprefollow;
+}
+
+// 对多个机器人账户
+foreach ($Users as $username=>$password){
 
 // 移除关注
 $userstounfollow = simplexml_load_file("http://$username:$password@api2.fanfou.com/friends/ids/$username.xml");
@@ -61,7 +82,7 @@ foreach ($userstounfollow as $usertounfollow)
 }
 
 // 关注用户
-$usertoprefollow0 = one_to_follow($username, $password, $username);
+$usertoprefollow0 = one_to_follow2($username, $password, one_to_follow($username, $password, $username));
 
 $userstofollow = simplexml_load_file("http://$username:$password@api2.fanfou.com/followers/ids/$usertoprefollow0.xml");
 $userstofollow = (array)$userstofollow;
@@ -69,7 +90,7 @@ $userstofollow2 = array();
 $userstofollow2 = convert_query($userstofollow);
 if (count($userstofollow2) > 100) // 如果用户数多于100个
 {
-    // 仅最多关注100个用户
+    // 仅最多随机关注100个用户
     $rand_keys = array_rand($userstofollow2, 100);
     for ($i=0; $i<=99; $i++)
     {
